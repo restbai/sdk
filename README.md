@@ -6,7 +6,7 @@ This project contains sample code for accessing Restb.ai's RESTful API service f
 
 ### Languages
 
-1. Python
+1. Python | [tutorial](https://github.com/restbai/sdk/wiki/Python-SDK-Overview)
 
 ### Documentation
 
