@@ -5,7 +5,11 @@ __MODELS = {
     're_styles': '/vision/v1/classify',
     're_features_v3': '/vision/v1/segmentation',
     're_logo': '/vision/v1/segmentation',
+    're_appliances': '/vision/v1/segmentation',
     're_privacy': '/vision/v1/segmentation',
+    're_moderation': '/vision/v1/segmentation',
+    're_cond_bathroom': '/vision/v1/classify',
+    're_cond_kitchen': '/vision/v1/classify',
     'blurry': '/vision/v1/blurry'
 }
 __PARAMS = {
