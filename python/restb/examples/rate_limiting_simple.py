@@ -100,8 +100,10 @@ def image_process_thread(url, client_key, queue, results,
             resp = service(url=url, endpoint=endpoint, params=params)
             end_time = now_millis()
             msg = '[{http}] <{limit}> thread [{thread}] {msg}'
-            if resp.status_code == 200:
+            vals = None
+            if resp is not None:
                 vals = json.loads(resp.text)
+            if vals and 'response' in vals:
                 results.put(dict(id=image_id, model=model_id, result=vals['response']))
                 total = end_time - start_time
                 print(msg.format(
@@ -119,7 +121,7 @@ def image_process_thread(url, client_key, queue, results,
                 if end_time > time_end.value:
                     time_end.value = end_time
                 lock_stats.release()
-            elif resp.status_code == 429:
+            elif vals and (resp.status_code == 429 or ('error_id' in vals and vals['error_id'] == '005')):  # handle legacy 005 errors for now
                 # handle over-rate limit retrying
                 print(msg.format(
                     http=resp.status_code,
@@ -130,6 +132,8 @@ def image_process_thread(url, client_key, queue, results,
                 # re-queue entry and try again, then sleep for ideal average time between requests
                 queue.put(entry)
                 time.sleep(1 / float(__requests_per_second))
+            else:
+                print('Request failed with response: {}'.format(resp))
         else:
             time.sleep(1)
 
