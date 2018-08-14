@@ -24,11 +24,7 @@ def test_api(client_key):
             'https://demo.restb.ai/images/demo/demo-3.jpg',
             'https://demo.restb.ai/images/demo/demo-4.jpg',
             'https://demo.restb.ai/images/demo/demo-5.jpg',
-            'https://demo.restb.ai/images/demo/demo-6.jpg',
-            'https://demo.restb.ai/images/demo/demo-1.jpg',
-            'https://demo.restb.ai/images/demo/demo-2.jpg',
-            'https://demo.restb.ai/images/demo/demo-3.jpg',
-            'https://demo.restb.ai/images/demo/demo-4.jpg']
+            'https://demo.restb.ai/images/demo/demo-6.jpg']
     queue = mp.Queue()
     image_id = 1
     for url in urls:
