@@ -1,17 +1,17 @@
 __URL_EU = 'https://api-eu.restb.ai'
 __URL_US = 'https://api-us.restb.ai'
-__MODELS = {
-    'real_estate_global_v2': '/vision/v1/classify',
-    're_styles': '/vision/v1/classify',
-    're_features_v3': '/vision/v1/segmentation',
-    're_logo': '/vision/v1/segmentation',
-    're_appliances': '/vision/v1/segmentation',
-    're_privacy': '/vision/v1/segmentation',
-    're_moderation': '/vision/v1/segmentation',
-    're_cond_bathroom': '/vision/v1/classify',
-    're_cond_kitchen': '/vision/v1/classify',
-    'blurry': '/vision/v1/blurry'
-}
+__ENDPOINT = '/vision/v2/predict'
+__MODELS = [
+    'real_estate_global_v2',
+    're_styles',
+    're_features_v3',
+    're_logo',
+    're_appliances',
+    're_compliance',
+    're_cond_bathroom',
+    're_cond_kitchen',
+    'blurry'
+]
 __PARAMS = {
     'client_key': None,
     'model_id': None,
@@ -23,6 +23,7 @@ __PARAMS = {
 __all__ = [
     '__URL_EU',
     '__URL_US',
+    '__ENDPOINT',
     '__MODELS',
     '__PARAMS'
 ]

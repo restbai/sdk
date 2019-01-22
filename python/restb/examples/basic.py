@@ -1,7 +1,7 @@
+import base64
+
 from restb.sdk import *
 from restb.sdk.api import service
-
-import base64
 
 
 def test_api(client_key):
@@ -14,7 +14,7 @@ def test_api(client_key):
 
     # 2. Determine which solution (API and model) to use
     model_id = 're_features_v3'  # from list of keys from __MODELS
-    endpoint = __MODELS[model_id]
+    endpoint = __ENDPOINT
     params['model_id'] = model_id
 
     # 3. Insert in your client_key
