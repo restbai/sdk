@@ -27,7 +27,7 @@ def test_api(client_key):
     queue = mp.Queue()
     image_id = 1
     for url in urls:
-        for model in __MODELS.keys():
+        for model in __MODELS:
             queue.put(dict(id=image_id, url=url, model=model))
         image_id += 1
     results = mp.Queue()
@@ -95,11 +95,11 @@ def image_process_thread(url, client_key, queue, results,
             params['client_key'] = client_key
             params['image_url'] = img_url
             params['model_id'] = model_id
-            endpoint = __MODELS[model_id]
+            endpoint = __ENDPOINT
             start_time = now_millis()
             resp = service(url=url, endpoint=endpoint, params=params)
             end_time = now_millis()
-            msg = '[{http}] <{limit}> thread [{thread}] {msg}'
+            msg = '[{http}] thread [{thread}] {msg}'
             vals = None
             if resp is not None:
                 vals = json.loads(resp.text)
@@ -108,7 +108,6 @@ def image_process_thread(url, client_key, queue, results,
                 total = end_time - start_time
                 print(msg.format(
                     http=resp.status_code,
-                    limit=resp.headers['X-RateLimit-Remaining-second'],
                     thread=mp.current_process().name,
                     msg='processed request in [' + str(total) + '] ms')
                 )
@@ -125,7 +124,6 @@ def image_process_thread(url, client_key, queue, results,
                 # handle over-rate limit retrying
                 print(msg.format(
                     http=resp.status_code,
-                    limit=resp.headers['X-RateLimit-Remaining-second'],
                     thread=mp.current_process().name,
                     msg='surpassed rate limit, trying again')
                 )
