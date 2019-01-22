@@ -1,6 +1,7 @@
 __URL_EU = 'https://api-eu.restb.ai'
 __URL_US = 'https://api-us.restb.ai'
 __ENDPOINT = '/vision/v2/predict'
+__ENDPOINT_MULTIPREDICT = '/vision/v2/multipredict'
 __MODELS = [
     'real_estate_global_v2',
     're_styles',
@@ -24,6 +25,7 @@ __all__ = [
     '__URL_EU',
     '__URL_US',
     '__ENDPOINT',
+    '__ENDPOINT_MULTIPREDICT',
     '__MODELS',
     '__PARAMS'
 ]
