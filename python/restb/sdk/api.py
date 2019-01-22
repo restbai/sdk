@@ -31,6 +31,6 @@ def resize_image(image):
     factor = small / 600 if small > 600 else 1.0
     resize_dimensions = int(x / factor), int(y / factor)
 
-    # resize (using BICUBIC resampling/interpolation)
-    image = image.resize(resize_dimensions, resample=Image.BICUBIC)
+    # resize (using LANCZOS resampling/interpolation)
+    image = image.resize(resize_dimensions, resample=Image.LANCZOS)
     return image
