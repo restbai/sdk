@@ -18,4 +18,4 @@ Be sure to visit our [website](https://restb.ai) for additional information.
 
 
 ----
-© 2018 Restb.ai [Mercurio Platform SL]. All rights reserved.
+© 2019 Restb.ai [Mercurio Platform SL]. All rights reserved.
