@@ -7,11 +7,9 @@ __MODELS = [
     're_styles',
     're_features_v3',
     're_logo',
-    're_appliances',
+    're_appliances_v2',
     're_compliance',
-    're_cond_bathroom',
-    're_cond_kitchen',
-    'blurry'
+    're_condition'
 ]
 __PARAMS = {
     'client_key': None,
