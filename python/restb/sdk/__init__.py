@@ -3,7 +3,7 @@ __URL_US = 'https://api-us.restb.ai'
 __ENDPOINT = '/vision/v2/predict'
 __ENDPOINT_MULTIPREDICT = '/vision/v2/multipredict'
 __MODELS = [
-    're_roomtype_global',
+    're_roomtype_global_v2',
     're_styles',
     're_features_v3',
     're_logo',
