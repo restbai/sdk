@@ -13,7 +13,7 @@ def test_api(client_key):
     url = __URL_US
 
     # 2. Determine which solution (API and model) to use
-    model_id = 're_features_v3'  # from list of keys from __MODELS
+    model_id = 're_features_v4'  # from list of keys from __MODELS
     endpoint = __ENDPOINT
     params['model_id'] = model_id
 
