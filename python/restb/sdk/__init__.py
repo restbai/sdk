@@ -5,11 +5,10 @@ __ENDPOINT_MULTIPREDICT = '/vision/v2/multipredict'
 __MODELS = [
     're_roomtype_global_v2',
     're_exterior_styles',
-    're_features_v3',
+    're_features_v4',
     're_logo',
-    're_appliances_v2',
-    're_compliance',
-    're_condition'
+    're_compliance_v2',
+    're_condition_r1r6_global'
 ]
 __PARAMS = {
     'client_key': None,
